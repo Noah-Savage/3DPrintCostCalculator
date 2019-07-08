@@ -1,0 +1,35 @@
+filType = ""
+hasColor = ""
+size = 0
+cost = 0
+costStr = ""
+
+filPrices = {
+  "PLA" : 15.99,
+  "PLA+" : 19.99,
+  "ABS" : 16.99,
+  "Nylon" : 32.99,
+  "Carbon Fiber" : 51.99
+}
+
+filType = input("What type of material is the print? ")
+while filType not in filPrices.keys():
+  filType = input("Not valid! What type of material are you using? ")
+
+hasColor = input("Do you already have the color? (y/n) ")
+while hasColor is not "y" and hasColor is not "n":
+  hasColorChar = input("Not valid! Do you already have the color? (y/n) ")
+
+if hasColor is "n":
+  cost = filPrices.get(filType) 
+  print("Cost of print is: ", cost)
+else:
+  while True:
+    try:
+      size = int(input("How many grams is the print? "))
+    except ValueError:
+      print("Not valid! How many grams is the print? ")
+    cost = (filPrices.get(filType) / 1000) * size
+    costStr = str(round(cost, 2))
+    print("Cost of print is: ", costStr)
+    break
