@@ -7,8 +7,13 @@ costStr = ""
 filPrices = {
   "PLA" : 19.99,
   "PLA+" : 24.99,
+  "PETG" : 24.99,
   "ABS" : 19.99,
   "Nylon" : 35.99,
+  "TPE" : 39.99,
+  "Wood" : 69.99,
+  "Metal" : 104.99,
+  "Conductive" : 109.99,
   "Carbon Fiber" : 51.99
 }
 
