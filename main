@@ -14,6 +14,7 @@ filPrices = {
   "Wood" : 69.99,
   "Metal" : 104.99,
   "Conductive" : 109.99,
+  "Magnetic" : 109.99,
   "Carbon Fiber" : 51.99
 }
 
