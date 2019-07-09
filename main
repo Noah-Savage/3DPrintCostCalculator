@@ -5,10 +5,10 @@ cost = 0
 costStr = ""
 
 filPrices = {
-  "PLA" : 15.99,
-  "PLA+" : 19.99,
-  "ABS" : 16.99,
-  "Nylon" : 32.99,
+  "PLA" : 19.99,
+  "PLA+" : 24.99,
+  "ABS" : 19.99,
+  "Nylon" : 35.99,
   "Carbon Fiber" : 51.99
 }
 
@@ -18,7 +18,7 @@ while filType not in filPrices.keys():
 
 hasColor = input("Do you already have the color? (y/n) ")
 while hasColor is not "y" and hasColor is not "n":
-  hasColorChar = input("Not valid! Do you already have the color? (y/n) ")
+  hasColor = input("Not valid! Do you already have the color? (y/n) ")
 
 if hasColor is "n":
   cost = filPrices.get(filType) 
@@ -27,9 +27,9 @@ else:
   while True:
     try:
       size = int(input("How many grams is the print? "))
+      cost = (filPrices.get(filType) / 1000) * size
+      costStr = str(round(cost, 2))
+      print("Cost of print is: $", costStr)
+      break
     except ValueError:
       print("Not valid! How many grams is the print? ")
-    cost = (filPrices.get(filType) / 1000) * size
-    costStr = str(round(cost, 2))
-    print("Cost of print is: ", costStr)
-    break
