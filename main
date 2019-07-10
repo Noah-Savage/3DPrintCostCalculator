@@ -15,6 +15,7 @@ filPrices = {
   "Metal" : 104.99,
   "Conductive" : 109.99,
   "Magnetic" : 109.99,
+  "HTPLA" : 63.99,
   "Carbon Fiber" : 51.99
 }
 
@@ -22,13 +23,13 @@ filType = input("What type of material is the print? ")
 while filType not in filPrices.keys():
   filType = input("Not valid! What type of material are you using? ")
 
-hasColor = input("Do you already have the color? (y/n) ")
+hasColor = input("Do you already have the filament? (y/n) ")
 while hasColor is not "y" and hasColor is not "n":
   hasColor = input("Not valid! Do you already have the color? (y/n) ")
 
 if hasColor is "n":
   cost = filPrices.get(filType) 
-  print("Cost of print is: ", cost)
+  print("A spool of", filType, "costs $", cost)
 else:
   while True:
     try:
